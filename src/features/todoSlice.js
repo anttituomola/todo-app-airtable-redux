@@ -5,6 +5,7 @@ export const todoSlice = createSlice({
 
     initialState: {
         todos: [],
+        filterMode: "all"
     },
 
     reducers: {
@@ -21,8 +22,11 @@ export const todoSlice = createSlice({
         deleteTodo: (state, action) => {
             state.todos = state.todos.filter(todo => todo.id !== action.payload)
         },
+        filterMode: (state, action) => {
+            state.filterMode = action.payload
+        }
     }
 })
 
-export const {hydrateTodos, toggleTodo, addTodo, deleteTodo} = todoSlice.actions
+export const {hydrateTodos, toggleTodo, addTodo, deleteTodo, filterMode} = todoSlice.actions
 export default todoSlice.reducer
