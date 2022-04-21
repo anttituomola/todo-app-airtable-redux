@@ -10,9 +10,13 @@ export const todoSlice = createSlice({
     reducers: {
         hydrateTodos: (state, action) => {
             state.todos = action.payload
+        },
+        toggleTodo: (state, action) => {
+            const todo = state.todos.find(todo => todo.id === action.payload)
+            todo.fields.done = !todo.fields.done
         }
     }
 })
 
-export const { hydrateTodos } = todoSlice.actions
+export const {hydrateTodos, toggleTodo} = todoSlice.actions
 export default todoSlice.reducer
