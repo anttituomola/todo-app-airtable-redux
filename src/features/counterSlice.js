@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-export const counterSlice = createSlice({
-    name: "counter",
+export const todoSlice = createSlice({
+    name: "todos",
 
     initialState: {
         todos: [],
@@ -14,5 +14,5 @@ export const counterSlice = createSlice({
     }
 })
 
-export const { increment, decrement, incrementByAmount } = counterSlice.actions
-export default counterSlice.reducer
+export const { hydrateTodos } = todoSlice.actions
+export default todoSlice.reducer
