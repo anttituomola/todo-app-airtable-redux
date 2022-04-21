@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
+import { addTodoBackend } from "../backendSync/addTodoBackend"
 
 export const todoSlice = createSlice({
     name: "todos",
@@ -18,6 +19,7 @@ export const todoSlice = createSlice({
         },
         addTodo: (state, action) => {
             state.todos.push(action.payload)
+            addTodoBackend(action.payload.fields.todoText)
         },
         deleteTodo: (state, action) => {
             state.todos = state.todos.filter(todo => todo.id !== action.payload)
