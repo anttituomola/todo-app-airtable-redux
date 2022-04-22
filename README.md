@@ -14,4 +14,4 @@ Here are recourses that helped me build this app:
 - Best color schema planner out there: [Coolors](https://coolors.co/)
 
 # LIVE DEMO
-[Live demo available!](https://62613daa93ef6f4ef872b384--nimble-puffpuff-1f002b.netlify.app/)
+[Live demo available!](https://nimble-puffpuff-1f002b.netlify.app/)

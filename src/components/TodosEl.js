@@ -6,6 +6,7 @@ export const TodosEl = () => {
     const filterMode = useSelector(state => state.todos.filterMode)
     const dispatch = useDispatch()
 
+    // Filtering buttons functionality
     const filteredTodos = todos.filter(todo => {
         switch (filterMode) {
             case "all":
@@ -19,12 +20,18 @@ export const TodosEl = () => {
         }
     })
 
-    const renderTodos = filteredTodos.map(todo => {
+    // Sort todos by createdTime
+    const sortedTodos = filteredTodos.sort((a, b) => {
+        return b.createdTime - a.createdTime
+    })
+
+    const renderTodos = sortedTodos.map(todo => {
+        // Create a class for done todos
         const todoClass = todo.fields.done ? "doneTask" : ""
 
         return <div key={todo.id} className="todosEl">
             <span className={todoClass}>{todo.fields.todoText}</span>
-            <input type="checkbox" checked={todo.fields.done} onChange={() => dispatch(toggleTodo(todo.id))}/>
+            <input type="checkbox" checked={todo.fields.done} onChange={() => dispatch(toggleTodo(todo.id))} />
             <button className="deleteButton" onClick={() => dispatch(deleteTodo(todo.id))}>Delete</button>
         </div>
     })
