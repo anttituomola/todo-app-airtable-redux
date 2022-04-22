@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { addTodoBackend } from "../backendSync/addTodoBackend"
+// import { addTodoBackend } from "../backendSync/addTodoBackend"
 import { deleteTodoBackend } from "../backendSync/deleteTodoBackend"
 import { updateTodoBackend } from "../backendSync/updateTodoBackend"
 
@@ -22,7 +22,6 @@ export const todoSlice = createSlice({
         },
         addTodo: (state, action) => {
             state.todos.push(action.payload)
-            addTodoBackend(action.payload.fields.todoText)
         },
         deleteTodo: (state, action) => {
             state.todos = state.todos.filter(todo => todo.id !== action.payload)

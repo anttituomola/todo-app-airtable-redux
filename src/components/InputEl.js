@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { addTodo } from "../features/todoSlice"
 import { useDispatch } from "react-redux"
+import {addTodoThunk} from "../backendSync/addTodoThunk";
 
 export const InputEl = () => {
     const [value, setValue] = useState("")
@@ -15,7 +16,7 @@ export const InputEl = () => {
           id: Date.now(),
       }
       setValue("")
-      dispatch(addTodo(todo))
+      dispatch(addTodoThunk(todo))
     }
 
   return (
