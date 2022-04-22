@@ -14,7 +14,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Todo app with Airtable backend and Redux state</h1>
+      <h1>Todo app</h1>
+      <h3>with Airtable backend and Redux state</h3>
       <InputEl />
       <TodosEl />
       <FiltersEl />

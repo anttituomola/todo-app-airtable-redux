@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { addTodo } from "../features/todoSlice"
 import { useDispatch } from "react-redux"
 import {addTodoThunk} from "../backendSync/addTodoThunk";
 
@@ -20,9 +19,9 @@ export const InputEl = () => {
     }
 
   return (
-    <div>
+    <div className="inputEl">
         <input className="inputField" value={value} type="text" placeholder="Add todo" onChange={(event) => setValue(event.target.value)}/>
-        <button className="inputButton" onClick={handleSubmit}>Add todo!</button>
+        <button className="inputButton" onClick={handleSubmit}>Add</button>
     </div>
   )
 }

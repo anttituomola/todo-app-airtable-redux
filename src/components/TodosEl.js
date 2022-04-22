@@ -20,10 +20,12 @@ export const TodosEl = () => {
     })
 
     const renderTodos = filteredTodos.map(todo => {
-        return <div key={todo.id}>
-            <span>{todo.fields.todoText}</span>
+        const todoClass = todo.fields.done ? "doneTask" : ""
+
+        return <div key={todo.id} className="todosEl">
+            <span className={todoClass}>{todo.fields.todoText}</span>
             <input type="checkbox" checked={todo.fields.done} onChange={() => dispatch(toggleTodo(todo.id))}/>
-            <button onClick={() => dispatch(deleteTodo(todo.id))}>Delete</button>
+            <button className="deleteButton" onClick={() => dispatch(deleteTodo(todo.id))}>Delete</button>
         </div>
     })
 
