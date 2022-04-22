@@ -9,7 +9,7 @@ export const FiltersEl = () => {
     return (
         <div id="filters">
             <div>
-                <p>Items left: {itemsLeft}</p>
+                <p>Items left: <strong>{itemsLeft}</strong></p>
             </div>
             <div id="filterButtons">
                 <button className="filterButton" onClick={() => dispatch(filterMode("all"))}>All</button>
