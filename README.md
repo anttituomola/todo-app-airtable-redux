@@ -6,7 +6,7 @@ Be aware that anyone can change and delete your data at any time as there is no 
 # Usefull links and references
 Here are recourses that helped me build this app:
 - [Markdown language cheatsheet](https://wordpress.com/support/markdown-quick-reference/)
-- [My own Redux Boilerplate](https://github.com/anttituomola/redux-boilerplate), feel free to use!
+- [My own Redux Boilerplate](https://github.com/anttituomola/redux-boilerplate-2022), feel free to use!
 - Airtable have super-good [personalised API docs for every project](https://airtable.com/api)
 
 # LIVE DEMO
