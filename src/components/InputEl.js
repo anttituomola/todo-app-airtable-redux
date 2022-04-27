@@ -20,7 +20,6 @@ export const InputEl = () => {
           todoText: value,
           done: false,
         },
-        id: Date.now(),
       }
       setValue("")
       dispatch(addTodoThunk(todo))

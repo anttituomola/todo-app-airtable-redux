@@ -7,12 +7,11 @@ export const addTodoThunk = (todo) => {
     return function(dispatch) {
         base('todos').create({
             "todoText": todo.fields.todoText
-        }, function (err, record) {
+        }, function (err) {
             if (err) {
                 console.error(err);
                 return;
             }
-            console.log(record.get('todoText'));
             dispatch(addTodo(todo));
         })
     }

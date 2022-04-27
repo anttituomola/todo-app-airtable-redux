@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit"
 // import { addTodoBackend } from "../backendSync/addTodoBackend"
 import { deleteTodoBackend } from "../backendSync/deleteTodoBackend"
 import { updateTodoBackend } from "../backendSync/updateTodoBackend"
+import hydrateTodosThunk from "../backendSync/hydrateTodosThunk"
 
 export const todoSlice = createSlice({
     name: "todos",
@@ -22,6 +23,7 @@ export const todoSlice = createSlice({
         },
         addTodo: (state, action) => {
             state.todos.push(action.payload)
+            hydrateTodosThunk()
         },
         deleteTodo: (state, action) => {
             state.todos = state.todos.filter(todo => todo.id !== action.payload)
