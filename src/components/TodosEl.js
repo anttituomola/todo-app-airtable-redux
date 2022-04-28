@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux"
 import { toggleTodo, deleteTodo } from "../features/todoSlice"
+import { v4 as uuid} from "uuid"
 
 export const TodosEl = () => {
     const todos = useSelector(state => state.todos.todos)
@@ -29,7 +30,7 @@ export const TodosEl = () => {
         // Create a class for done todos
         const todoClass = todo.fields.done ? "doneTask" : ""
 
-        return <div key={todo.id} className="todosEl">
+        return <div key={uuid()} className="todosEl">
             <span className={todoClass}>{todo.fields.todoText}</span>
             <input type="checkbox" checked={todo.fields.done} onChange={() => dispatch(toggleTodo(todo.id))} />
             <button className="deleteButton" onClick={() => dispatch(deleteTodo(todo.id))}>Delete</button>

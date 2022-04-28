@@ -15,7 +15,6 @@ export const InputEl = () => {
   }, [])
 
   const listenForEnter = (e) => {
-    console.log("KEY")
     if (e.key === "Enter") {
       handleSubmit()
     }
