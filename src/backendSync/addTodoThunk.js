@@ -1,5 +1,7 @@
 import {addTodo} from "../features/todoSlice";
 import Airtable from 'airtable'
+import hydrateTodosThunk from "../backendSync/hydrateTodosThunk"
+
 // This is base-specific key with disposable account
 var base = new Airtable({apiKey: 'key8ntBpAJQ9Dz4Q8'}).base('appI5bp3TfUEMBRDH');
 
@@ -13,6 +15,7 @@ export const addTodoThunk = (todo) => {
                 return;
             }
             dispatch(addTodo(todo));
+            dispatch(hydrateTodosThunk())
         })
     }
 }

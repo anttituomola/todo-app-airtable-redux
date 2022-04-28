@@ -1,12 +1,13 @@
 import { useState, useRef, useEffect } from "react"
 import { useDispatch } from "react-redux"
-import { addTodoThunk } from "../backendSync/addTodoThunk";
+import { addTodoThunk } from "../backendSync/addTodoThunk"
 
 export const InputEl = () => {
   const inputField = useRef(null)
   const [value, setValue] = useState("")
   const dispatch = useDispatch()
 
+  // Set autofocus to input field
   useEffect(() => {
     if (inputField.current) {
       inputField.current.focus()
@@ -32,6 +33,10 @@ export const InputEl = () => {
       dispatch(addTodoThunk(todo))
     }
   }
+
+/*   if(typeof currentActionFlyingBy === 'function') {
+    currentActionFlyingBy(dispatch, getState);
+  } */
 
   // There's a bug: when we're submitting a new todo, it get's dispatched to Airtable, and in there, an ID will be created.
   // This ID is now, however, update immidiately back to Redux state, so when we try to delete or edit it, it will fail to update the data in Airtable.

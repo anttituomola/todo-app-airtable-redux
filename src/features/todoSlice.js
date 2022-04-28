@@ -17,15 +17,18 @@ export const todoSlice = createSlice({
             state.todos = action.payload
         },
         toggleTodo: (state, action) => {
+            // Update the order: backend first
             const todo = state.todos.find(todo => todo.id === action.payload)
             todo.fields.done = !todo.fields.done
             updateTodoBackend(todo.id, todo.fields.done)
         },
         addTodo: (state, action) => {
             state.todos.push(action.payload)
-            hydrateTodosThunk()
+            //hydrateTodosThunk()
+            // Fetch an updated list from Airtable and update Redux state with it
         },
         deleteTodo: (state, action) => {
+            // Update the order: backend first
             state.todos = state.todos.filter(todo => todo.id !== action.payload)
             deleteTodoBackend(action.payload)
         },
